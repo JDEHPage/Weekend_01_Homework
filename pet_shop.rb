@@ -86,38 +86,73 @@ def add_pet_to_customer(customer, pet)
   end
 
 
+# def customer_can_afford_pet(customer, pet)
+#   if customer[:cash] >= pet[:price]
+#     return true
+#   else
+#     return  false
+#   end
+# end
+
+
 def customer_can_afford_pet(customer, pet)
-  if customer[:cash] >= pet[:price]
-    return true
-  else
-    return  false
-  end
+  return customer[:cash] >= pet[:price]
 end
 
 
-
-
-
-
+# def sell_pet_to_customer(pet_shop, pet, customer)
+#
+#   if pet == nil
+#
+#     customer_pet_count(customer)
+#
+#     pets_sold(pet_shop)
+#
+#     customer_cash(customer)
+#
+#     total_cash(pet_shop)
+#
+#
+#   elsif
+#
+#
+#     if customer_can_afford_pet(customer, pet) == true
+#
+#       add_pet_to_customer(customer, pet)
+#       customer_pet_count(customer)
+#
+#
+#       increase_pets_sold(pet_shop, customer_pet_count(customer))
+#       pets_sold(pet_shop)
+#
+#
+#       remove_customer_cash(customer, pet[:price])
+#       customer_cash(customer)
+#
+#       add_or_remove_cash(pet_shop, pet[:price])
+#       total_cash(pet_shop)
+#
+#     elsif customer_can_afford_pet(customer, pet) == false
+#
+#       customer_pet_count(customer)
+#
+#       pets_sold(pet_shop)
+#
+#       customer_cash(customer)
+#
+#       total_cash(pet_shop)
+#
+#     end
+#
+#   end
+#
+# end
 
 
 def sell_pet_to_customer(pet_shop, pet, customer)
 
-  if pet == nil
 
-    customer_pet_count(customer)
-
-    pets_sold(pet_shop)
-
-    customer_cash(customer)
-
-    total_cash(pet_shop)
-
-
-  elsif
-
-
-    if customer_can_afford_pet(customer, pet) == true
+    if pet != nil && customer_can_afford_pet(customer, pet)
 
       add_pet_to_customer(customer, pet)
       customer_pet_count(customer)
@@ -133,18 +168,6 @@ def sell_pet_to_customer(pet_shop, pet, customer)
       add_or_remove_cash(pet_shop, pet[:price])
       total_cash(pet_shop)
 
-    elsif customer_can_afford_pet(customer, pet) == false
-
-      customer_pet_count(customer)
-
-      pets_sold(pet_shop)
-
-      customer_cash(customer)
-
-      total_cash(pet_shop)
-
     end
-
-  end
 
 end
